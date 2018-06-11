@@ -40,7 +40,7 @@ function checkNum(num){
     attemptCheck(currState);
   }
 }
-
+//comments
 function attemptCheck(x){
   if ( x === 'correct') {
     console.log("Don't Change it");
