@@ -5,6 +5,39 @@ var ansObj = {
   num3 : Math.floor(Math.random() * 10).toString()
 }
 
+var correctCount;
+var wrongCount;
+var mainGuess = document.querySelectorAll('.numGuess');
+var userGuess = {
+  num0 : null,
+  num1 : null,
+  num2 : null,
+  num3 : null
+}
+
+var attempts = 0;
+
+
+function pushToArr1(){
+  arr1 = [];
+  Object.keys(ansObj).forEach(function(key){
+    console.log(ansObj[key]);
+    arr1.push(ansObj[key]);
+  })
+}
+
+pushToArr1();
+
+function checkAnswer(){
+  arr2 = [];
+  Object.keys(mainGuess).forEach(function(num){
+    var iterated = mainGuess[num];
+    console.log(iterated.value);
+    arr2.push(iterated.value);
+  })
+  compareArray();
+}
+
 console.log(ansObj);
 
 var userGuess = {
@@ -16,31 +49,7 @@ var userGuess = {
 
 var attempts = 0;
 
-function checkNum(num){
-  var x = num.id;
-  var ans = ansObj[x]
-  console.log(num);
-  if (num.value === ans) {
-    console.log("Match");
-    changeAttr(x);
-    $('#' + x).addClass('correct')
-    $('#' + x).data('state', 'correct')
-    userGuess[x] = num.value;
-    var currState = $('#' + x).data("state")
-    console.log(currState);
-    attemptCheck(currState);
-  }else {
-    console.log("No Match");
-    changeAttr(x);
-    $('#' + x).addClass('wrong')
-    $('#' + x).data('state', "wrong")
-    userGuess[x] = num.value;
-    var currState = $('#' + x).data("state")
-    console.log(currState);
-    attemptCheck(currState);
-  }
-}
-//comments
+//checks if the class is correct
 function attemptCheck(x){
   if ( x === 'correct') {
     console.log("Don't Change it");
@@ -49,7 +58,9 @@ function attemptCheck(x){
   }
 }
 //document.querySelector('#gameBoard').getAttribute('data-info')
-// if class is == correct check for win classes and if classes = 4 , you win! else allow input to be edited again
+// if class is == correct check for win data-state and if data-state = 4 , you win! else allow input to be edited again, might need to move it somewhere else to check overall
 function changeAttr(y){
   $('#' + y).attr("readonly", true);
 }
+
+//seperate counter, add one counter at then end of every 4 guesses.
