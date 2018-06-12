@@ -4,10 +4,6 @@ var ansObj = {
   num2 : Math.floor(Math.random() * 10).toString(),
   num3 : Math.floor(Math.random() * 10).toString()
 }
-
-var correctCount;
-var wrongCount;
-var mainGuess = document.querySelectorAll('.numGuess');
 var userGuess = {
   num0 : null,
   num1 : null,
@@ -15,13 +11,14 @@ var userGuess = {
   num3 : null
 }
 
-var attempts = 0;
+var mainGuess = document.querySelectorAll('.numGuess');
+$("#attemptBox").text(attempts);
 
+console.log(ansObj);
 
 function pushToArr1(){
   arr1 = [];
   Object.keys(ansObj).forEach(function(key){
-    console.log(ansObj[key]);
     arr1.push(ansObj[key]);
   })
 }
@@ -35,10 +32,12 @@ function checkAnswer(){
     console.log(iterated.value);
     arr2.push(iterated.value);
   })
+  function historicGuess(){
+    var historyStr = arr2.join("");
+    $('#history').appendTo
+  }
   compareArray();
 }
-
-console.log(ansObj);
 
 var userGuess = {
   num0 : null,
@@ -47,9 +46,6 @@ var userGuess = {
   num3 : null
 }
 
-var attempts = 0;
-
-//checks if the class is correct
 function attemptCheck(x){
   if ( x === 'correct') {
     console.log("Don't Change it");
@@ -57,10 +53,6 @@ function attemptCheck(x){
     console.log("Change this");
   }
 }
-//document.querySelector('#gameBoard').getAttribute('data-info')
-// if class is == correct check for win data-state and if data-state = 4 , you win! else allow input to be edited again, might need to move it somewhere else to check overall
 function changeAttr(y){
   $('#' + y).attr("readonly", true);
 }
-
-//seperate counter, add one counter at then end of every 4 guesses.

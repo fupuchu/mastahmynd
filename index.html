@@ -6,15 +6,21 @@
     <title>Mastah Mynd</title>
   </head>
   <div id="gameBoard">
+    <div class="attemptBox">
+      <p id="attemptBox"></p>
+    </div>
     <div class="row" id="mainGuess">
-      <input class="numGuess" id="num0">
-      <input class="numGuess" id="num1">
-      <input class="numGuess" id="num2">
-      <input class="numGuess" id="num3">
+      <form>
+        <input class="numGuess" id="num0" min="0" max="9">
+        <input class="numGuess" id="num1" min="0" max="9">
+        <input class="numGuess" id="num2" min="0" max="9">
+        <input class="numGuess" id="num3" min="0" max="9">
+        <div class="btn" onclick="checkAnswer()">
+          <p>Check Number</p>
+        </div>
+      </form>
     </div>
-    <div class="btn" onclick="checkAnswer()">
-      <p>Check Number</p>
-    </div>
+    <div class="historyList" id="history"></div>
   </div>
   <body>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" charset="utf-8"></script>
