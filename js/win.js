@@ -12,7 +12,7 @@ function compareArray() {
     if (arr2.includes("n")) {
       attempts -= 1;
     }
-    $("#attemptCounter").text(attempts);
+    $("#attemptNum").text(attempts);
   };
 
   if (wrongInput > 0) {
@@ -46,11 +46,8 @@ function checkWin() {
       break;
     }else if (arr1[i] === arr2[i]) {
       console.log("You win!");
-      winCounter += 1;
+      // winCounter += 1;
+      $('.btn').hide();
     }
-  }
-  if (winCounter === 4) {
-    console.log("BIG WINNER!!!");
-    $('.btn').hide();
   }
 }

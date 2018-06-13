@@ -1,9 +1,27 @@
+/*
+rgb(190,226,231)
+rgb(79,87,170)
+rgb(69,72,87)
+rgb(114,129,139)
+rgb(143,0,46)
+ */
+
+/*
+todo:
+need to add transitions for turn based background
+ */
+
 body{
-  font-family: sans-serif;
+  font-family: 'Short Stack', cursive;
+  background-color: rgba(45, 45, 46, 0.89);
+  color: rgb(244, 244, 244);
+}
+input{
+  font-family: 'Short Stack', cursive;
 }
 .container{
   max-width: 500px;
-  margin: 32% auto;
+  margin: 0 auto;
 }
 .attemptBox{
   border: 1px solid blue;
@@ -18,10 +36,10 @@ body{
 .numGuess{
   height: 50px;
   width: 50px;
-  border-top: 5px solid black;
-  border-left: 5px solid black;
-  border-right: 5px solid grey;
-  border-bottom: 5px solid grey;
+  border-top: 5px solid rgb(190,226,231);
+  border-left: 5px solid rgb(190,226,231);
+  border-right: 5px solid rgb(114,129,139);
+  border-bottom: 5px solid rgb(114,129,139);
   border-radius: 5px;
   margin: 0 0 10px 0;
   text-align: center;
@@ -46,5 +64,5 @@ body{
   background-color: green;
 }
 .wrong{
-  background-color: red;
+  background-color: rgba(161, 24, 24, 0.8);
 }

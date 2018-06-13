@@ -4,15 +4,20 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="css/master.css">
+  <link href="https://fonts.googleapis.com/css?family=Handlee|Short+Stack" rel="stylesheet">
   <title>Mastah Mynd</title>
 </head>
 
 <body>
   <div class="container">
+    <div class="header">
+      <h1>Mastah Mynd</h1>
+      <p>Guess the correct number in 10 attempts!</p>
+    </div>
     <div id="gameBoard">
       <div class="attemptBox">
         <p id="attemptBox">Attempts:
-          <span></span>
+          <span id="attemptNum"></span>
         </p>
         <div class="historyList">
           <p>Previous Guess</p>
@@ -32,9 +37,15 @@
               <p>Guess the number!</p>
             </div>
         </form>
+        <h3 id="hint">
+          2 numbers are between 4 & 5
+        </h3>
         </div>
       </div>
     </div>
+    <footer>
+      <p>Made with lovesign by Leon Ho</p>
+    </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" charset="utf-8"></script>
     <script src="js/win.js" charset="utf-8"></script>
     <script src="js/main.js" charset="utf-8"></script>
