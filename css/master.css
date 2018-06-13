@@ -1,3 +1,47 @@
+body{
+  font-family: sans-serif;
+}
+.container{
+  max-width: 500px;
+  margin: 32% auto;
+}
+.attemptBox{
+  border: 1px solid blue;
+}
+.attemptBox{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+#mainGuess{
+  border: 1px solid red;
+}
+.numGuess{
+  height: 50px;
+  width: 50px;
+  border-top: 5px solid black;
+  border-left: 5px solid black;
+  border-right: 5px solid grey;
+  border-bottom: 5px solid grey;
+  border-radius: 5px;
+  margin: 0 0 10px 0;
+  text-align: center;
+  font-size: 26px;
+}
+.numSubmit{
+  text-align: center;
+}
+.inputWrapper{
+  text-align: center;
+}
+#attemptBox{
+  border: 1px solid green;
+  grid-column: 3/3;
+}
+.historyList{
+  border: 1px solid purple;
+  grid-column: 1/3;
+  grid-row: 1;
+}
 .correct{
   background-color: green;
 }
