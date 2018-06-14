@@ -13,25 +13,57 @@ need to add transitions for turn based background
 
 body{
   font-family: 'Short Stack', cursive;
-  background-color: rgba(45, 45, 46, 0.89);
+  background-color: rgba(62, 62, 62, 0.89);
   color: rgb(244, 244, 244);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 input{
   font-family: 'Short Stack', cursive;
+  color: rgb(255, 255, 255);
+}
+input:focus{
+  outline: none;
+}
+a{
+  text-decoration: none;
+  color: rgb(255, 184, 0);
+}
+footer{
+  font-size: 18px;
+}
+footer > p > i{
+  color: rgb(255, 80, 80);
 }
 .container{
   max-width: 500px;
   margin: 0 auto;
 }
+.header{
+  text-align: center;
+}
+.header > h1{
+  font-family: 'Handlee', cursive;
+  font-size: 42px;
+  margin-bottom: 1px;
+}
+.header > p{
+  margin: 0;
+}
 .attemptBox{
-  border: 1px solid blue;
+  border-bottom: 2px solid white;
+}
+#attemptBox{
+  color: rgb(234, 250, 50);
+}
+.inputWrapper{
+  margin-top: 20px;
 }
 .attemptBox{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
 #mainGuess{
-  border: 1px solid red;
 }
 .numGuess{
   height: 50px;
@@ -44,6 +76,7 @@ input{
   margin: 0 0 10px 0;
   text-align: center;
   font-size: 26px;
+  background-color: rgb(70, 70, 70);
 }
 .numSubmit{
   text-align: center;
@@ -52,17 +85,53 @@ input{
   text-align: center;
 }
 #attemptBox{
-  border: 1px solid green;
   grid-column: 3/3;
+  font-size: 20px;
+}
+#gameBoard{
+  border-bottom: 3px solid white;
+}
+#reset , .btn{
+  width: 150px;
+  margin: 5px auto 5px auto;
+  background: rgb(79,87,170);
+  padding: 10px;
+  border: 2px solid rgba(45, 45, 46, 0.89);
+  border-radius: 5px;
+  font-weight: 600;
+}
+.btn{
+  width: 200px;
+}
+.btn:hover, #reset:hover{
+  background: rgb(59, 170, 77);
+  color: rgb(250, 250, 250);
+}
+.btn > p{
+  margin: 0;
+}
+#history{
+  font-size: 20px;
+  margin: 0 0 15px 0;
+  color: rgb(108, 255, 119);
+}
+.historyList > p{
+  color: rgb(55, 230, 255);
+}
+#alertBox{
+  width: 300px;
+  margin: 20px auto;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: 600;
 }
 .historyList{
-  border: 1px solid purple;
   grid-column: 1/3;
   grid-row: 1;
 }
 .correct{
-  background-color: green;
+  background-color: rgb(97, 177, 112);
 }
 .wrong{
-  background-color: rgba(161, 24, 24, 0.8);
+  background-color: rgba(196, 66, 2, 0.8);
 }

@@ -5,27 +5,25 @@ var attempts = 0;
 var winCounter = 0;
 
 function compareArray() {
+  $('#alertBox').text(fixedHints);
   var x = arr2.join("")
-
   if (arr2.length === 4) {
-    console.log('arr2 length is 4');
-    if (arr2.includes("n")) {
+    if (arr2.includes("X")) {
       attempts -= 1;
     }
+    console.log("current" + attempts);
     $("#attemptNum").text(attempts);
   };
-
   if (wrongInput > 0) {
-    //put in html element to say there was a wrong input
-    console.log("Replace the wrong input");
-    console.log("current attempts " + attempts);
+    alertChange();
   }
   if (attempts === 10) {
-    console.log("You lose...");
+    alertLose();
     $('.btn').hide();
   } else {
     wrongInput = 0;
     if (arr1.length == arr2.length) {
+      winCounter = 0;
       for (var i = 0; i < arr2.length; i++) {
         if (arr1[i] == arr2[i]) {
           $('#num' + i).addClass('correct').removeClass('wrong');
@@ -40,14 +38,31 @@ function compareArray() {
   }
 }
 function checkWin() {
-  for (var i = arr1.length; i--;){
+  for (var i = arr1.length; i--;) {
     if (arr1[i] !== arr2[i]) {
-      console.log("arrays not same")
-      break;
-    }else if (arr1[i] === arr2[i]) {
-      console.log("You win!");
-      // winCounter += 1;
-      $('.btn').hide();
+      console.log("Wrong number! " + arr2[i])
+    } else if (arr1[i] === arr2[i]) {
+      winCounter += 1;
+      console.log(winCounter);
     }
   }
+  if (winCounter == 4) {
+    alertWin();
+    $('.btn').hide();
+  }
+}
+
+function alertChange(){
+  $("#alertBox").html("Invalid Input!").addClass("wrong");
+}
+function alertLose(){
+  var icon = "<i class=\"fas fa-times-square\"></i>"
+  var answer = arr1.join("");
+  $("#alertBox").html(icon + " You lose! " + icon + "<br>The correct number is " + answer).addClass("wrong");
+  $('#mainGuess').append("<div id=\"reset\" onclick=\"resetGame()\">Try Again?</div>")
+}
+function alertWin(){
+  var icon = "<i class=\"fal fa-smile\"></i>"
+  $("#alertBox").html(icon +  " You win! " + icon).addClass("correct");
+  $('#mainGuess').append("<div id=\"reset\" onclick=\"resetGame()\">Try Again?</div>")
 }
