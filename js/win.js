@@ -18,6 +18,7 @@ function compareArray() {
       })
     }else {
       winCounter = 0;
+      $("#alertBox").removeClass("wrong");
       for (var i = 0; i < arr2.length; i++) {
         if (arr1[i] == arr2[i]) {
           $('#num' + i).addClass('correct').removeClass('wrong');
@@ -29,18 +30,17 @@ function compareArray() {
         }
       }
       $("#history").text(x);
+      checkWin();
     }
     $("#attemptNum").text(attempts);
-    checkWin();
   };
-  if (wrongInput > 0) {
+  if (wrongInput > 0 && arr2.length === 4 && arr2.includes("X")) {
     alertChange();
+    $("#history").text(x);
   }
   if (attempts === 10 && arr2.length === 4) {
     alertLose();
     $('.btn').hide();
-  } else {
-    wrongInput = 0;
   }
 }
 function checkWin() {
