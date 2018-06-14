@@ -10,43 +10,47 @@ function compareArray() {
   if (arr2.length === 4) {
     if (arr2.includes("X")) {
       attempts -= 1;
-    }
-    console.log("current" + attempts);
-    $("#attemptNum").text(attempts);
-  };
-  if (wrongInput > 0) {
-    alertChange();
-  }
-  if (attempts === 10) {
-    alertLose();
-    $('.btn').hide();
-  } else {
-    wrongInput = 0;
-    if (arr1.length == arr2.length) {
+      var inputClass = document.querySelectorAll('.numGuess');
+      inputClass.forEach(function(x){
+        x.classList.remove('correct');
+        x.classList.remove('wrong');
+        x.classList.add('default');
+      })
+    }else {
       winCounter = 0;
       for (var i = 0; i < arr2.length; i++) {
         if (arr1[i] == arr2[i]) {
           $('#num' + i).addClass('correct').removeClass('wrong');
           $('#num' + i).attr("readonly", true);
+          $('#num' + i).removeClass('default');
         } else {
+          $('#num' + i).removeClass('default');
           $('#num' + i).addClass('wrong');
         }
       }
       $("#history").text(x);
-      checkWin();
     }
+    $("#attemptNum").text(attempts);
+    checkWin();
+  };
+  if (wrongInput > 0) {
+    alertChange();
+  }
+  if (attempts === 10 && arr2.length === 4) {
+    alertLose();
+    $('.btn').hide();
+  } else {
+    wrongInput = 0;
   }
 }
 function checkWin() {
   for (var i = arr1.length; i--;) {
     if (arr1[i] !== arr2[i]) {
-      console.log("Wrong number! " + arr2[i])
     } else if (arr1[i] === arr2[i]) {
       winCounter += 1;
-      console.log(winCounter);
     }
   }
-  if (winCounter == 4) {
+  if (winCounter === 4) {
     alertWin();
     $('.btn').hide();
   }

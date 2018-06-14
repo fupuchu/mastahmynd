@@ -135,3 +135,6 @@ footer > p > i{
 .wrong{
   background-color: rgba(196, 66, 2, 0.8);
 }
+.default{
+  background-color: rgb(70, 70, 70);
+}

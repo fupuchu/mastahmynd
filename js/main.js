@@ -16,7 +16,6 @@ var mainGuess = document.querySelectorAll('.numGuess');
 var attempts = 0;
 $("#attempCounter").text(attempts);
 
-console.log(ansObj);
 
 function pushToArr1(){
   arr1 = [];
@@ -35,7 +34,6 @@ function checkAnswer(event){
   arr2 = [];
   Object.keys(mainGuess).forEach(function(num){
     var iterated = mainGuess[num];
-    console.log(iterated.value);
     if (iterated.value < 6 && iterated.value >= 0 && iterated.value.length !== 0) {
       arr2.push(iterated.value);
     }else {
