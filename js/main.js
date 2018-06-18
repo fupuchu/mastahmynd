@@ -42,6 +42,8 @@ function checkAnswer(event){
     compareArray();
   })
 }
+
+
 function changeAttr(y){
   $('#' + y).attr("readonly", true);
 }
@@ -52,6 +54,18 @@ function giveHints(){
   $("#alertBox").html("One of the number is: " + hints);
 }
 
+var keyEvent = 0;
+$(".numGuess").keydown(function(){
+  console.log(this.maxLength);
+  if (this.value.length === this.maxLength) {
+      $(this).next(".numGuess").focus();
+      keyEvent += 1;
+      console.log("current" + keyEvent);
+      if (keyEvent == 3) {
+        console.log("the keyEvent is " + keyEvent);
+      }
+    }
+})
 
 function resetGame(){
   attempts = 0;
@@ -68,6 +82,7 @@ function resetGame(){
     x.classList.remove('wrong');
     x.removeAttribute('readonly');
   })
+  $('body').css('background-color', 'rgba(62, 62, 62, 0.89)');
   $("#history").text("Awaiting player's guess..");
   $("#alertBox").removeClass("correct");
   $("#alertBox").removeClass("wrong");

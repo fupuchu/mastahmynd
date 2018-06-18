@@ -1,7 +1,6 @@
 var arr1 = [];
 var arr2 = [];
 
-var attempts = 0;
 var winCounter = 0;
 
 function compareArray() {
@@ -27,6 +26,7 @@ function compareArray() {
         } else {
           $('#num' + i).removeClass('default');
           $('#num' + i).addClass('wrong');
+          $('#num' + i).val(null);
         }
       }
       $("#history").text(x);
@@ -38,7 +38,10 @@ function compareArray() {
     alertChange();
     $("#history").text(x);
   }
-  if (attempts === 10 && arr2.length === 4) {
+  if (attempts <= 5 && attempts >= 4 && arr2.length === 4) {
+    warnBg();
+  }else if (attempts === 10 && arr2.length === 4) {
+    dangerBg();
     alertLose();
     $('.btn').hide();
   }
@@ -59,6 +62,12 @@ function checkWin() {
 }
 
 
+function dangerBg(){
+  $('body').css('background-color', 'rgb(156, 31, 31)');
+}
+function warnBg(){
+  $('body').css('background-color', 'rgba(204, 121, 23, 0.89)');
+}
 function alertChange(){
   $("#alertBox").html("Invalid Input!").addClass("wrong");
 }
