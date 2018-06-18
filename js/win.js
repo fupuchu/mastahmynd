@@ -43,6 +43,8 @@ function compareArray() {
     $('.btn').hide();
   }
 }
+
+
 function checkWin() {
   for (var i = arr1.length; i--;) {
     if (arr1[i] !== arr2[i]) {
@@ -56,15 +58,20 @@ function checkWin() {
   }
 }
 
+
 function alertChange(){
   $("#alertBox").html("Invalid Input!").addClass("wrong");
 }
+
+
 function alertLose(){
   var icon = "<i class=\"fas fa-times-square\"></i>"
   var answer = arr1.join("");
   $("#alertBox").html(icon + " You lose! " + icon + "<br>The correct number is " + answer).addClass("wrong");
   $('#mainGuess').append("<div id=\"reset\" onclick=\"resetGame()\">Try Again?</div>")
 }
+
+
 function alertWin(){
   var icon = "<i class=\"fal fa-smile\"></i>"
   $("#alertBox").html(icon +  " You win! " + icon).addClass("correct");

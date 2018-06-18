@@ -4,14 +4,12 @@ var ansObj = {
   num2 : Math.floor(Math.random() * 5).toString(),
   num3 : Math.floor(Math.random() * 5).toString()
 }
-
 var userGuess = {
   num0 : null,
   num1 : null,
   num2 : null,
   num3 : null
 }
-
 var mainGuess = document.querySelectorAll('.numGuess');
 var attempts = 0;
 $("#attempCounter").text(attempts);
@@ -26,6 +24,7 @@ function pushToArr1(){
 
 pushToArr1();
 giveHints();
+
 
 var wrongInput = 0;
 function checkAnswer(event){
@@ -52,6 +51,7 @@ function giveHints(){
   fixedHints = "One of the number is: " + hints;
   $("#alertBox").html("One of the number is: " + hints);
 }
+
 
 function resetGame(){
   attempts = 0;
