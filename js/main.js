@@ -12,7 +12,7 @@ var userGuess = {
 }
 var mainGuess = document.querySelectorAll('.numGuess');
 var attempts = 0;
-$("#attempCounter").text(attempts);
+$("#attemptNum").text(attempts);
 
 
 function pushToArr1(){
