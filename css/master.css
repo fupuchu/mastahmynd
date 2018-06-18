@@ -6,11 +6,6 @@ rgb(114,129,139)
 rgb(143,0,46)
  */
 
-/*
-todo:
-need to add transitions for turn based background
- */
-
 body{
   font-family: 'Short Stack', cursive;
   background-color: rgba(62, 62, 62, 0.89);

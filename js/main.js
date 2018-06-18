@@ -55,7 +55,7 @@ function giveHints(){
 }
 
 var keyEvent = 0;
-$(".numGuess").keydown(function(){
+$(".numGuess").keyup(function(){
   console.log(this.maxLength);
   if (this.value.length === this.maxLength) {
       $(this).next(".numGuess").focus();
