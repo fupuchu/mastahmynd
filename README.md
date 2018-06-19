@@ -28,7 +28,7 @@ One notable bug was where by the player can cheese the invalid inputs to keep gu
 1. What in my code and program design in the project would I do differently next time?
 **Changing the whole code structure to functional programming with higher-order functions. When coding the game I was listening to a guy called mpj who runs a YouTube channel about Functiona Javascript.**
 
-```
+```javascript
 for (var i = 0; i < arr2.length; i++) {
         if (arr1[i] == arr2[i]) {
           $('#num' + i).addClass('correct').removeClass('wrong');
@@ -46,14 +46,14 @@ An example of a for loop with conditionals, I want to reduce the amount of code 
 1. What in my code and program design in the project went well? Is there anything I would do the same next time?
 **Conditionals and spreading out individual tasks into functions helped me identify the bugs in a faster way. Console logging the results of each functions also helped me in identifying what and where went wrong.**
 
-```
+```javascript
 Object.keys(ansObj).forEach(function(num){
     ansObj[num] = Math.floor(Math.random() * 6).toString()
   });
 ```
 An example of what I think was the correct method of doing functional programming. This is in the reset function where it changes each of the number for the combination.
 
-```
+```javascript
 if (arr2.includes("X")) {
       attempts -= 1;
       var inputClass = document.querySelectorAll('.numGuess');
